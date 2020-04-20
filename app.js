@@ -9,8 +9,8 @@ const pool = require('./database/dbConnPool')
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const aziendeRouters = require('./routes/aziende')
-const optionsRouter = require('./routes/options')
+const utentiRouters = require('./routes/utenti')
+// const optionsRouter = require('./routes/options')
 
 app.use(function(req, res, next) {
 
@@ -20,13 +20,9 @@ app.use(function(req, res, next) {
 
 });
 
-app.use('/aziende', aziendeRouters);
-app.use('/options', optionsRouter);
+app.use('/utenti', utentiRouters);
+// app.use('/options', optionsRouter);
 
-
-app.get('/hello', (req, res) =>{
-  res.send('Hello World!');
-})
 
 module.exports = app;
 
